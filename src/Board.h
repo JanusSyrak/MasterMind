@@ -1,5 +1,4 @@
-#ifndef BOARD_H_
-#define BOARD_H_
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -26,5 +25,3 @@ private:
 	std::vector<std::vector<int>> board_;
 	std::vector<std::vector<int>> comparison_;
 };
-
-#endif // BOARD_H_

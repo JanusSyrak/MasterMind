@@ -1,5 +1,4 @@
-#ifndef INPUTCONTROLLER_H_
-#define INPUTCONTROLLER_H_
+#pragma once
 
 #include <iostream>
 #include <string>
@@ -21,5 +20,3 @@ public:
 	std::string current_input_;
 	std::string second_input_;
 };
-
-#endif // INPUTCONTROLLER_H_

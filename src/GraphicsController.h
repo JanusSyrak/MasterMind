@@ -1,5 +1,4 @@
-#ifndef GRAPHICSCONTROLLER_H_
-#define GRAPHICSCONTROLLER_H_
+#pragma once
 
 #include <string>
 
@@ -27,5 +26,3 @@ private:
 	void displayPegsText();
 	void displayCodeLengthText();
 };
-
-#endif // GRAPHICSCONTROLLER_H_

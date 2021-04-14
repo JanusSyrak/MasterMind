@@ -1,5 +1,4 @@
-#ifndef GAMESETTINGS_H_
-#define GAMESETTINGS_H_
+#pragma once
 
 const int MIN_PEGS = 3;
 const int MAX_PEGS = 100;
@@ -22,5 +21,3 @@ public:
 	int num_colors_;
 	int code_length_;
 };
-
-#endif GAMESETTINGS_H_

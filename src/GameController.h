@@ -1,5 +1,4 @@
-#ifndef GAMECONTROLLER_H_
-#define GAMECONTROLLER_H_
+#pragma once
 
 #include <random>
 #include <string>
@@ -60,5 +59,3 @@ private:
 
 
 };
-
-#endif // GAMECONTROLLER_H_

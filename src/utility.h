@@ -1,5 +1,4 @@
-#ifndef UTILITY_H_
-#define UTILITY_H_
+#pragma once
 
 #include <algorithm>
 #include <vector>
@@ -32,5 +31,3 @@ namespace utility {
 	}
 
 }
-
-#endif // UTILITY_H

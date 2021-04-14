@@ -1,5 +1,4 @@
-#ifndef CODE_H_
-#define CODE_H_
+#pragma once
 
 #include <string>
 #include <vector>
@@ -17,5 +16,3 @@ public:
 
 	std::vector<int> code_;
 };
-
-#endif // CODE_H_

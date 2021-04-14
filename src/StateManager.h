@@ -1,5 +1,4 @@
-#ifndef STATEMANAGER_H_
-#define STATEMANAGER_H_
+#pragma once
 
 #include <string>
 #include <vector>
@@ -19,5 +18,3 @@ public:
 private:
 	std::vector<std::string> states_;
 };
-
-#endif // STATEMANAGER_H_
