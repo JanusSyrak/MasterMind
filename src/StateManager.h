@@ -16,5 +16,5 @@ public:
 	std::string getNextState(std::string, InputController*);
 
 private:
-	std::vector<std::string> states_;
+	std::vector<std::string> mStates;
 };

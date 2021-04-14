@@ -12,40 +12,40 @@ void InputController::handleInput(std::string game_state) {
 	if (game_state == "MAIN_MENU") {
 		std::cin >> prompt;
 		if (prompt == "b") {
-			current_input_ = "GAME";
+			mCurrentInput = "GAME";
 		}
 
 		else if (prompt == "s") {
-			current_input_ = "SETTINGS";
+			mCurrentInput = "SETTINGS";
 		}
 
 		else {
 			std::cout << "prompt was: " << prompt << std::endl;
 			std::cout << "Sorry, that has not been implemented yet." << std::endl;
 			std::cout << "Starting game." << std::endl;
-			current_input_ = "GAME";
+			mCurrentInput = "GAME";
 		}
 	}
 
 	if (game_state == "SETTINGS") {
 		std::cin >> prompt;
 		if (prompt == "r")
-			current_input_ = "ROUNDS";
+			mCurrentInput = "ROUNDS";
 		else if (prompt == "p")
-			current_input_ = "PEGS";
+			mCurrentInput = "PEGS";
 		else if (prompt == "c")
-			current_input_ = "CODE_LENGTH";
+			mCurrentInput = "CODE_LENGTH";
 		else if (prompt == "e")
-			current_input_ = "MAIN_MENU";
+			mCurrentInput = "MAIN_MENU";
 	}
 
 	if (game_state == "NEW_GAME") {
 		std::cin >> prompt;
 		if (prompt == "y") {
-			current_input_ = "RESET";
+			mCurrentInput = "RESET";
 		}
 		if (prompt == "n") {
-			current_input_ = "BREAK";
+			mCurrentInput = "BREAK";
 		}
 	}
 
@@ -89,11 +89,11 @@ void InputController::confirmChange(std::string change, std::string prompt) {
 	std::cin >> confirm;
 	if (confirm == "y" || confirm == "yes") {
 		std::string SettingToChange = translateToMessage(change);
-		current_input_ = "CHANGE_" + SettingToChange;
-		second_input_ = prompt;
+		mCurrentInput = "CHANGE_" + SettingToChange;
+		mSecondInput = prompt;
 	}
 	else {
-		current_input_ = "SETTINGS";
+		mCurrentInput = "SETTINGS";
 	}
 }
 

@@ -2,14 +2,14 @@
 
 Board::Board()
 {
-	width_ = 4;
-	height_ = 12;
+	mWidth = 4;
+	mHeight = 12;
 	init();
 }
 
 Board::Board(int w, int h) {
-	width_ = w;
-	height_ = h;
+	mWidth = w;
+	mHeight = h;
 	init();
 }
 
@@ -19,48 +19,48 @@ Board::~Board()
 
 void Board::init() {
 	std::vector<std::vector<int>> board;
-	for (int i = 0; i < height_; i++) {
+	for (int i = 0; i < mHeight; i++) {
 		std::vector<int> row;
-		for (int j = 0; j < width_; j++) {
+		for (int j = 0; j < mWidth; j++) {
 			row.push_back(0);
 		}
 		board.push_back(row);
 	}
-	board_ = board;
-	comparison_ = board;
+	mBoard = board;
+	mComparison = board;
 }
 
 void Board::setBoardRow(int index, std::vector<int> code) {
-	board_[index] = code;
+	mBoard[index] = code;
 }
 
 void Board::setCompRow(int index, std::vector<int> code) {
-	comparison_[index] = code;
+	mComparison[index] = code;
 }
 
 int Board::getWidth() {
-	return width_;
+	return mWidth;
 }
 
 void Board::setWidth(int width) {
-	width_ = width;
+	mWidth = width;
 }
 
 void Board::setHeight(int height)
 {
-	height_ = height;
+	mHeight = height;
 }
 
 int Board::getHeight() {
-	return height_;
+	return mHeight;
 }
 
 
 std::vector<std::vector<int>> Board::getComparison() {
-	return comparison_;
+	return mComparison;
 }
 
 
 std::vector<std::vector<int>> Board::getBoard() {
-	return board_;
+	return mBoard;
 }

@@ -6,12 +6,12 @@ Code::Code()
 
 Code::Code(std::string s)
 {
-	code_ = utility::to_vector(s);
+	mCode = utility::to_vector(s);
 }
 
 Code::Code(std::vector<int> v)
 {
-	code_ = v;
+	mCode = v;
 }
 
 Code::~Code()
@@ -20,12 +20,12 @@ Code::~Code()
 
 // 2 is for correct position and color, 1 is for correct color
 std::vector<int> Code::compare(Code other) {
-	std::vector<int> comparison(code_.size(), 0);
-	std::vector<int> guess = code_;
-	std::vector<int> answer = other.code_;
+	std::vector<int> comparison(mCode.size(), 0);
+	std::vector<int> guess = mCode;
+	std::vector<int> answer = other.mCode;
 
 	// Check for correct position and color
-	for (int i = 0; i < code_.size(); i++) {
+	for (int i = 0; i < mCode.size(); i++) {
 		if (guess[i] == answer[i]) {
 			comparison[i] = 2;
 			guess[i] = -1;

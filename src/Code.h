@@ -14,5 +14,5 @@ public:
 
 	std::vector<int> compare(Code other);
 
-	std::vector<int> code_;
+	std::vector<int> mCode;
 };

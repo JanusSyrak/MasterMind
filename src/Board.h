@@ -20,8 +20,8 @@ public:
 	std::vector<std::vector<int>> getBoard();
 
 private:
-	int width_;
-	int height_;
-	std::vector<std::vector<int>> board_;
-	std::vector<std::vector<int>> comparison_;
+	int mWidth;
+	int mHeight;
+	std::vector<std::vector<int>> mBoard;
+	std::vector<std::vector<int>> mComparison;
 };

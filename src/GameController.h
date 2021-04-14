@@ -48,14 +48,14 @@ private:
 	int num_colors_;
 	int code_length_;
 
-	std::vector<int> code_;
-	std::string game_state_;
+	std::vector<int> mCode;
+	std::string mGameState;
 
-	Board* board_;
-	GraphicsController* graphics_;
-	InputController* input_;
-	StateManager* state_manager_;
-	GameSettings* settings_;
+	Board* mBoard;
+	GraphicsController* mGraphics;
+	InputController* mInput;
+	StateManager* mStateManager;
+	GameSettings* mSettings;
 
 
 };

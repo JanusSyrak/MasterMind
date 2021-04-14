@@ -17,7 +17,7 @@ public:
 	void setColors(int);
 	void setCodeLength(int);
 
-	int num_rounds_;
-	int num_colors_;
-	int code_length_;
+	int mNumRounds;
+	int mNumColors;
+	int mCodeLength;
 };

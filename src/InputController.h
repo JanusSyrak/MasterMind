@@ -17,6 +17,6 @@ public:
 	bool validGuess(std::string, int, int);
 	std::string getGuess(int, int);
 
-	std::string current_input_;
-	std::string second_input_;
+	std::string mCurrentInput;
+	std::string mSecondInput;
 };
