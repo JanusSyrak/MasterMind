@@ -98,9 +98,9 @@ void GraphicsController::displayGraphics(Board& board, std::string game_state, s
 }
 
 void GraphicsController::displaySettingsText(GameSettings& settings) {
-	std::cout << "To change number of rounds, input 'r' in the prompt. (Current: " << settings.mNumRounds << ")" << std::endl;
-	std::cout << "To change the number of pegs, input 'p' in the prompt. (Current: " << settings.mNumColors << ")" << std::endl;
-	std::cout << "To change the code size, input 'c' in the prompt. (Current: " << settings.mCodeLength << ")"<< std::endl;
+	std::cout << "To change number of rounds, input 'r' in the prompt. (Current: " << settings.getNumRounds() << ")" << std::endl;
+	std::cout << "To change the number of pegs, input 'p' in the prompt. (Current: " << settings.getNumColors() << ")" << std::endl;
+	std::cout << "To change the code size, input 'c' in the prompt. (Current: " << settings.getCodeLength() << ")"<< std::endl;
 	std::cout << "To return to the main menu, input 'e' in the prompt." << std::endl;
 }
 

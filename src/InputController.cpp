@@ -131,3 +131,13 @@ std::string InputController::getGuess(int code_length, int pegs) {
 	return current_guess;
 }
 
+
+std::string InputController::getCurrentInput()
+{
+	return mCurrentInput;
+}
+
+std::string InputController::getSecondInput()
+{
+	return mCurrentInput;
+}

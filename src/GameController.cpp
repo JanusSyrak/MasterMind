@@ -12,7 +12,7 @@ GameController::GameController() {
 	mGameState = "MAIN_MENU";
 	current_round_ = 1;
 	mSettings = new GameSettings();
-	mBoard = new Board(mSettings->mCodeLength, mSettings->mNumRounds);
+	mBoard = new Board(mSettings->getCodeLength(), mSettings->getNumRounds());
 	mInput = new InputController();
 	mStateManager = new StateManager();
 
@@ -26,15 +26,15 @@ GameController::~GameController() {
 void GameController::generateCode() {
 	std::vector<int> code;
 	std::random_device rd;
-	for (int i = 0; i < mSettings->mCodeLength; i++) {
-		code.push_back(rd() % mSettings->mNumColors + 1);
+	for (int i = 0; i < mSettings->getCodeLength(); i++) {
+		code.push_back(rd() % mSettings->getNumColors() + 1);
 	}
 	mCode = code;
 }
 
 
 int GameController::roundsLeft() {
-	return mSettings->mNumRounds - current_round_ + 1;
+	return mSettings->getNumRounds() - current_round_ + 1;
 }
 
 void GameController::increaseRound() {
@@ -46,16 +46,16 @@ void GameController::updateState() {
 }
 
 void GameController::executeState() {
-	if (mInput->mCurrentInput == "CHANGE_ROUNDS") {
-		setNumRounds(stoi(mInput->mSecondInput));
+	if (mInput->getCurrentInput() == "CHANGE_ROUNDS") {
+		setNumRounds(stoi(mInput->getSecondInput()));
 	}
 
-	if (mInput->mCurrentInput == "CHANGE_PEGS") {
-		setNumPegs(stoi(mInput->mSecondInput));
+	if (mInput->getCurrentInput() == "CHANGE_PEGS") {
+		setNumPegs(stoi(mInput->getSecondInput()));
 	}
 
-	if (mInput->mCurrentInput == "CODE_LENGTH") {
-		setCodeLength(stoi(mInput->mSecondInput));
+	if (mInput->getCurrentInput() == "CODE_LENGTH") {
+		setCodeLength(stoi(mInput->getSecondInput()));
 	}
 }
 
@@ -76,7 +76,7 @@ void GameController::mainLoop()
 
 			std::cout << "Please enter a guess." << std::endl;
 
-			std::string current_guess = mInput->getGuess(mSettings->mCodeLength, mSettings->mNumColors);
+			std::string current_guess = mInput->getGuess(mSettings->getCodeLength(), mSettings->getNumColors());
 
 			Code guess(current_guess);
 
@@ -107,7 +107,8 @@ void GameController::mainLoop()
 }
 
 
-void GameController::setNumRounds(int rounds) {
+void GameController::setNumRounds(int rounds) 
+{
 	mSettings->setRounds(rounds);
 	mBoard->setHeight(rounds);
 	mBoard->init();
@@ -127,12 +128,35 @@ void GameController::setNumPegs(int colors)
 	mSettings->setColors(colors);
 }
 
-int GameController::getCodeLength() { return mSettings->mCodeLength; }
-Board* GameController::getBoard() { return mBoard; }
-int GameController::getNumColors() { return mSettings->mNumColors; }
-std::vector<int> GameController::getCode() { return mCode; }
-int GameController::getCurrentRound() { return current_round_; }
-int GameController::getNumRounds() { return mSettings->mNumRounds; }
+int GameController::getCodeLength() 
+{ 
+	return mSettings->getCodeLength(); 
+}
+
+Board* GameController::getBoard() 
+{ 
+	return mBoard; 
+}
+
+int GameController::getNumColors() 
+{ 
+	return mSettings->getNumColors(); 
+}
+
+std::vector<int> GameController::getCode() 
+{ 
+	return mCode; 
+}
+
+int GameController::getCurrentRound() 
+{ 
+	return current_round_; 
+}
+
+int GameController::getNumRounds() 
+{ 
+	return mSettings->getNumRounds(); 
+}
 
 InputController* GameController::getInputController()
 {
