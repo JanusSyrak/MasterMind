@@ -14,5 +14,8 @@ public:
 
 	std::vector<int> compare(Code other);
 
+	std::vector<int> getCode();
+
+private:
 	std::vector<int> mCode;
 };

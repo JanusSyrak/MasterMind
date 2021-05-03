@@ -17,6 +17,10 @@ public:
 	void setColors(int);
 	void setCodeLength(int);
 
+	int getNumRounds();
+	int getNumColors();
+	int getCodeLength();
+private:
 	int mNumRounds;
 	int mNumColors;
 	int mCodeLength;

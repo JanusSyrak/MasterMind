@@ -28,3 +28,18 @@ void GameSettings::setColors(int colors) {
 void GameSettings::setCodeLength(int code_length) {
 	mCodeLength = code_length;
 }
+
+int GameSettings::getNumRounds()
+{
+	return mNumRounds;
+}
+
+int GameSettings::getNumColors()
+{
+	return mNumColors;
+}
+
+int GameSettings::getCodeLength()
+{
+	return mCodeLength;
+}
